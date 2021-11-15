@@ -1,0 +1,7 @@
+.laylout {
+    display: grid;
+    // height: 100vh;
+    // width: 100vw;
+    grid-template-rows: 50px 5-px 1fr;
+    grid-template-columns: 1fr;
+}
