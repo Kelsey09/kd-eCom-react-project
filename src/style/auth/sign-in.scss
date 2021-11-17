@@ -26,11 +26,11 @@
     }
     &__line {
         grid-row: line-s/line-e;
-        border-top: 1px solid #cccccc;
+        border-top: 1px solid #ccc;
     }
     &__login {
-        grid-row: login-s/login-e;
         margin-top: 39px;
+        grid-row: login-s/login-e;
     }
     &__details {
         grid-row: 1/-1;
