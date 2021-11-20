@@ -1,4 +1,7 @@
-import { SET_HEADER_LINKS, SET_NAVBAR_LINKS } from '../actions/types';
+import {
+    SET_HEADER_LINKS,
+    SET_NAVBAR_LINKS
+} from '../actions/types';
 
 const INITIAL_STATE = {
     headerLinks: [],
@@ -15,7 +18,7 @@ export default function(state = INITIAL_STATE, action) {
         case SET_NAVBAR_LINKS:
             return {
                 ...state,
-                headerLinks: action.payload
+                navbarLinks: action.payload
             }
         default: return state;
     }

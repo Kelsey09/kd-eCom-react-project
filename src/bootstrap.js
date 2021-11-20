@@ -25,13 +25,13 @@ function main() {
             <Route path='/' exact component={SignIn} />
             <Route path='/signin' exact component={SignIn} />
             <Route path='/signup' exact component={SignUp} />
+            
             <Route path='/account' exact component={Account} />
           </Switch>
         </Layout>
       </Router>
-    </Provider>,
-    document.querySelector(".app-wrapper")
-  );
+    </Provider>
+    , document.querySelector(".app-wrapper"));
 }
 
 document.addEventListener("DOMContentLoaded", main);
