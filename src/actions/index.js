@@ -1,9 +1,11 @@
 import { 
     setHeaderLinks, 
-    setNavbarLinks 
+    setNavbarLinks,
+    changeNavbarActive 
 } from "./header-navbar";
 
 export {
     setHeaderLinks,
-    setNavbarLinks
+    setNavbarLinks,
+    changeNavbarActive
 };
