@@ -8,6 +8,18 @@ import PurchaseHistory from './purchase-history';
 class Account extends Component {
 
     componentDidMount() {
+        const headerLinks = [
+            {
+                _id: 0,
+                title: 'Shop',
+                path: '/shop'
+            },
+            {
+                _id: 1,
+                title: 'Logout',
+                path: '/'
+            }
+        ]
 
         const navbarLinks = [
             {
@@ -24,7 +36,7 @@ class Account extends Component {
             }
         ]
 
-        this.props.setHeaderLinks([]);
+        this.props.setHeaderLinks(headerLinks);
         this.props.setNavbarLinks(navbarLinks);
     }
 
