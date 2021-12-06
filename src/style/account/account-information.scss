@@ -45,6 +45,10 @@
       grid-column: m/e;
         input {
           width: 200px;
+        }
     }
-}
+
+    &__change-password {
+        transform: translateY(38px);
+    }
 }
