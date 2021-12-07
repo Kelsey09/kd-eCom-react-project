@@ -17,11 +17,15 @@ body {
 
 @import 'layout';
 @import 'header-nav';
-@import 'auth/sign-in';
-@import 'auth/sign-up';
 @import 'page-title';
 @import 'form-fields';
 @import 'details';
+
+@import 'auth/sign-in';
+@import 'auth/sign-up';
+
 @import 'account/purchase-history';
 @import 'account/account-information';
 @import 'account/account';
+
+@import 'shop/shop.scss';
