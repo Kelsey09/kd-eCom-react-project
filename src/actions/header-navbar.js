@@ -1,7 +1,7 @@
 import {
-    CHANGE_NAVBAR_ACTIVE,
     SET_HEADER_LINKS,
-    SET_NAVBAR_LINKS
+    SET_NAVBAR_LINKS,
+    CHANGE_NAVBAR_ACTIVE
 } from './types';
 
 export function setHeaderLinks(links) {

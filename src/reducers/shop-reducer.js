@@ -1,19 +1,19 @@
 import {
+    SET_SHOP_CATEGORIES,
     SET_SHOP_PRODUCTS,
-    FILTER_PRODUCTS_WITH_CATEGORY_ID,
-    SET_SHOP_CATEGORIES
+    FILTER_PRODUCTS_WITH_CATEGORY_ID
 } from '../actions/types';
 
 const INITIAL_STATE = {
     categories: [],
-    productsSelected: [],
-    products: []
+    products: [],
+    filteredProducts: []
 }
 
 export default function(state = INITIAL_STATE, action) {
     switch (action.type) {
         case SET_SHOP_CATEGORIES:
-            const categories = action.payload;
+            const categories  = action.payload;
             return {
                 ...state,
                 categories
@@ -24,12 +24,16 @@ export default function(state = INITIAL_STATE, action) {
                 products: action.payload
             }
         case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-            console.log(action.payload);
+            var filteredProducts = [];
+            state.products.map(product => {
+                if(product.belongsTo.includes(action.payload)) {
+                    filteredProducts.push(product);
+                }
+            })
             return {
                 ...state,
-                // selectedCategoryId
+                filteredProducts
             }
-    
         default: return state;
     }
 }

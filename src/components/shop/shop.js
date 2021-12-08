@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+
 import { connect } from 'react-redux';
-import * as actions from '../../actions'
+import * as actions from '../../actions';
 
 class Shop extends Component {
 
@@ -11,31 +12,54 @@ class Shop extends Component {
                 title: 'Login',
                 path: '/signin'
             }
-        ] 
+        ]
         this.props.setHeaderLinks(headerLinks);
         this.props.fetchShopCategories();
+
+        // filter products with links
         this.props.fetchShopProducts();
     }
 
     shouldComponentUpdate(nextProps) {
-        if (this.props != nextProps) {
+        if(this.props != nextProps) {
             this.props.setNavbarLinks(nextProps.categories, (_id) => this.props.filterProductsWithCategoryId(_id));
         }
         return true
     }
 
     render() {
+
         return (
             <div className='shop'>
-                shop...
+                {/* shop search bar */}
+                <div className='shop__products'>
+                    {
+                        this.props.filteredProducts.map(product => {
+                            return (
+                                <div key={product._id} className='shop-product'>
+                                    <div className='shop-product__title'>
+                                        {product.title}
+                                    </div>
+                                    <div className='shop-product__description'>
+                                        {product.description}
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
+                {/* shop cart button */}
             </div>
         )
     }
 }
 
 function mapStateToProps(state) {
-    const { categories } = state.shop;
-    return { categories }
+    const { categories, filteredProducts } = state.shop;
+    return {
+        categories,
+        filteredProducts
+    } 
 }
 
 Shop = connect(mapStateToProps, actions)(Shop);

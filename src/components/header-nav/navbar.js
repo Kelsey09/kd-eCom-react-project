@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import * as actions from '../../actions';
+
 import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class Navbar extends Component {
+
     handleOnClick = (link) => {
         this.props.changeNavbarActive(link._id)
         if(this.props.onClick) {
@@ -30,7 +32,8 @@ class Navbar extends Component {
 function mapStateToProps(state) {
     const{ navbarLinks, onClick } = state.headerNavbar;
     return {
-        navbarLinks
+        navbarLinks,
+        onClick
     }
 }
 
