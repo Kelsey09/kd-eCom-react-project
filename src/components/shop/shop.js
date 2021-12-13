@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import ShopSearchBar from './shop-searchbar';
 import ShopProduct from './shop-product';
+import ShopCart from './shop-cart';
 
 class Shop extends Component {
 
@@ -46,7 +47,7 @@ class Shop extends Component {
                         })
                     }
                 </div>
-                {/* shop cart button */}
+                <ShopCart/>
             </div>
         )
     }
