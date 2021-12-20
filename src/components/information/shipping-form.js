@@ -3,6 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 
 import { FormInput, FormButton } from '../form-fields';
 import history from '../../history';
+import OrderSummary from './order-summary';
 
 class ShippingForm extends Component {
     render() {
@@ -17,6 +18,7 @@ class ShippingForm extends Component {
                 <div className='shipping-form__line'></div>
                 <Field className='shipping-form__use-this-address' name='use-this-address' type='submit' title='Use This Address' component={FormButton} onClick={() => history.push('/information/payment')} />
                 <Field className='shipping-form__back' name='back' type='button' title='Back' short={true} component={FormButton} onClick={() => history.push('/signin')} />
+                <OrderSummary className='shipping-form__summary' />
             </form>
         )
     }
